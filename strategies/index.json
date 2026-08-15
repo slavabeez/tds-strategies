@@ -1,0 +1,18 @@
+{
+ "items": [
+  {
+   "file": "test-fallen-solo-msuvj6i5.json",
+   "name": "TEST Fallen Solo",
+   "map": "Wrecked Battlefield",
+   "difficulty": "Fallen",
+   "mode": "survival",
+   "towers": [
+    "Scout",
+    "Minigunner"
+   ],
+   "actions": 2,
+   "author": "strat tester",
+   "ts": "2026-08-15T21:14:23.789Z"
+  }
+ ]
+}
