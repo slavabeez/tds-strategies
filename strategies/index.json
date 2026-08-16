@@ -1,1 +1,24 @@
-{"items":[]}
+{
+ "items": [
+  {
+   "file": "fallen-19m-35s-mswank8u.json",
+   "name": "fallen 19m 35s",
+   "hash": "7bf078c657a08b63",
+   "map": "Grass Isle",
+   "difficulty": "Fallen",
+   "mode": "survival",
+   "towers": [
+    "Pyromancer",
+    "Commander",
+    "Farm",
+    "EvolvedEnforcer",
+    "EvolvedOperator"
+   ],
+   "actions": 252,
+   "author": "я",
+   "ts": "2026-08-16T21:05:28.638Z",
+   "stars": 0,
+   "raters": []
+  }
+ ]
+}
