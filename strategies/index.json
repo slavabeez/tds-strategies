@@ -1,3 +1,21 @@
 {
- "items": []
+ "items": [
+  {
+   "file": "farm-money-msyzgo27.json",
+   "name": "farm money",
+   "hash": "53d42f1a66dd3ca3",
+   "map": "Simplicity",
+   "difficulty": "Frost",
+   "mode": "survival",
+   "towers": [
+    "Scout",
+    "Shotgunner"
+   ],
+   "actions": 68,
+   "author": "я",
+   "ts": "2026-08-18T18:15:29.745Z",
+   "stars": 0,
+   "raters": []
+  }
+ ]
 }
