@@ -1,7 +1,8 @@
-local Players          = game:GetService("Players")
-local RunService       = game:GetService("RunService")
-local UserInputService = game:GetService("UserInputService")
-local HttpService      = game:GetService("HttpService")
+local Players            = game:GetService("Players")
+local RunService         = game:GetService("RunService")
+local UserInputService   = game:GetService("UserInputService")
+local HttpService        = game:GetService("HttpService")
+local PathfindingService = game:GetService("PathfindingService")
 
 local LP = Players.LocalPlayer
 
@@ -9,14 +10,19 @@ local CFG = {
     Speed          = 45,
     ClimbSpeed     = 40,
     ArriveDist     = 2.0,
+    WaypointDist   = 3.5,
     ClearanceAbove = 7,
     MaxClimb       = 80,
     ScanUp         = 150,
     LookAhead      = 6,
     PostRemoteWait = 2,
     StuckTimeout   = 15,
+    AgentRadius    = 3,
+    AgentHeight    = 6,
+    WaypointSpace  = 8,
     Loop           = false,
     ShowPath       = true,
+    UsePathfind    = true,
     PlatformStand  = true,
 }
 
@@ -34,6 +40,11 @@ end
 local function getHum()
     local c = getChar()
     return c and c:FindFirstChildOfClass("Humanoid")
+end
+local function rootOffset()
+    local hrp, hum = getHRP(), getHum()
+    if hrp and hum then return hrp.Size.Y / 2 + hum.HipHeight end
+    return 3
 end
 
 local function resolvePath(path)
@@ -268,6 +279,10 @@ local function drawPlan(points, from)
     local prev = from
     for _, p in ipairs(points) do
         drawLine(prev, p, COL_PLAN, 0.45, planFolder)
+        newPart({
+            Shape = Enum.PartType.Ball, Size = Vector3.new(0.7, 0.7, 0.7),
+            CFrame = CFrame.new(p), Color = COL_PLAN, Transparency = 0.35,
+        }, planFolder)
         prev = p
     end
 end
@@ -304,7 +319,7 @@ local function topOnSegment(a, b)
     return best
 end
 
-local function planPath(a, b)
+local function planArc(a, b)
     local up = Vector3.new(0, 1.5, 0)
     if not blocked(a + up, b + up) then
         return { b }
@@ -319,8 +334,52 @@ local function planPath(a, b)
     }
 end
 
-local function flyTo(target)
-    local t0 = os.clock()
+local function planPathfind(a, b)
+    if not CFG.UsePathfind then return nil end
+    local path
+    local ok = pcall(function()
+        path = PathfindingService:CreatePath({
+            AgentRadius     = CFG.AgentRadius,
+            AgentHeight     = CFG.AgentHeight,
+            AgentCanJump    = true,
+            AgentCanClimb   = false,
+            WaypointSpacing = CFG.WaypointSpace,
+        })
+    end)
+    if not ok or not path then
+        ok = pcall(function()
+            path = PathfindingService:CreatePath({
+                AgentRadius  = CFG.AgentRadius,
+                AgentHeight  = CFG.AgentHeight,
+                AgentCanJump = true,
+            })
+        end)
+    end
+    if not ok or not path then return nil end
+
+    local computed = pcall(function() path:ComputeAsync(a, b) end)
+    if not computed or path.Status ~= Enum.PathStatus.Success then return nil end
+
+    local wps = path:GetWaypoints()
+    if #wps < 2 then return nil end
+
+    local yOff = rootOffset()
+    local pts = {}
+    for i = 2, #wps do
+        local w = wps[i]
+        local p = w.Position + Vector3.new(0, yOff, 0)
+        if w.Action == Enum.PathWaypointAction.Jump then
+            p = p + Vector3.new(0, 3, 0)
+        end
+        table.insert(pts, p)
+    end
+    table.insert(pts, b)
+    return pts
+end
+
+local function flyTo(target, tolerance)
+    local tol = tolerance or CFG.ArriveDist
+    local t0  = os.clock()
     while playing do
         local dt  = RunService.Heartbeat:Wait()
         local hrp = getHRP()
@@ -331,7 +390,7 @@ local function flyTo(target)
             local pos   = hrp.Position
             local delta = target - pos
             local dist  = delta.Magnitude
-            if dist <= CFG.ArriveDist then return true end
+            if dist <= tol then return true end
             if os.clock() - t0 > CFG.StuckTimeout then return false end
 
             local dir   = delta.Unit
@@ -355,16 +414,35 @@ local function flyTo(target)
     return false
 end
 
+local function walkPoints(pts, from, finalTarget)
+    drawPlan(pts, from)
+    for i, p in ipairs(pts) do
+        if not playing then return false end
+        local tol = (i == #pts) and CFG.ArriveDist or CFG.WaypointDist
+        if not flyTo(p, tol) then return false end
+    end
+    if finalTarget then
+        local hrp = getHRP()
+        if hrp and (hrp.Position - finalTarget).Magnitude > CFG.ArriveDist then
+            return flyTo(finalTarget, CFG.ArriveDist)
+        end
+    end
+    return true
+end
+
 local function travelTo(target)
     local hrp = getHRP()
     if not hrp then return false end
-    local pts = planPath(hrp.Position, target)
-    drawPlan(pts, hrp.Position)
-    for _, p in ipairs(pts) do
+
+    local pts = planPathfind(hrp.Position, target)
+    if pts then
+        if walkPoints(pts, hrp.Position, target) then return true end
         if not playing then return false end
-        if not flyTo(p) then return false end
     end
-    return true
+
+    hrp = getHRP()
+    if not hrp then return false end
+    return walkPoints(planArc(hrp.Position, target), hrp.Position, target)
 end
 
 local function stepRemote(s)
@@ -429,9 +507,11 @@ local gui = mk("ScreenGui", {
 }, guiParent())
 pcall(function() if syn and syn.protect_gui then syn.protect_gui(gui) end end)
 
+local WIDTH, HEIGHT = 340, 512
+
 local main = mk("Frame", {
-    Size = UDim2.new(0, 330, 0, 480),
-    Position = UDim2.new(0, 30, 0.5, -240),
+    Size = UDim2.new(0, WIDTH, 0, HEIGHT),
+    Position = UDim2.new(0, 30, 0.5, -HEIGHT / 2),
     BackgroundColor3 = Color3.fromRGB(24, 26, 32),
     BorderSizePixel = 0,
     Active = true,
@@ -506,15 +586,17 @@ local function button(text, y, w, x, color)
     return b
 end
 
-local bRecPos    = button("+ Позиция  (F1)",   0,  0.5,  0,    Color3.fromRGB(38, 78, 96))
-local bRecRemote = button("+ Remote  (F2)",    0,  0.5,  0.5,  Color3.fromRGB(96, 70, 25))
-local bPresets   = button("+ Действие  v",     32, 0.5,  0,    Color3.fromRGB(70, 60, 40))
-local bWait      = button("+ Пауза",           32, 0.5,  0.5,  Color3.fromRGB(50, 50, 62))
-local bPlay      = button("> Играть  (F3)",    64, 0.5,  0,    Color3.fromRGB(35, 95, 55))
-local bStop      = button("[] Стоп",           64, 0.5,  0.5,  Color3.fromRGB(110, 45, 45))
-local bClear     = button("Очистить",          96, 0.34, 0)
-local bCopy      = button("Копировать",        96, 0.33, 0.34)
-local bPaste     = button("Вставить",          96, 0.33, 0.67)
+local bRecPos    = button("+ Позиция  (F1)",   0,   0.5,  0,    Color3.fromRGB(38, 78, 96))
+local bRecRemote = button("+ Remote  (F2)",    0,   0.5,  0.5,  Color3.fromRGB(96, 70, 25))
+local bPresets   = button("+ Действие  v",     32,  0.5,  0,    Color3.fromRGB(70, 60, 40))
+local bClassic   = button("Классика (все 4)",  32,  0.5,  0.5,  Color3.fromRGB(88, 62, 30))
+local bWait      = button("+ Пауза",           64,  0.5,  0,    Color3.fromRGB(50, 50, 62))
+local bPasteStep = button("Вставить шаг",      64,  0.5,  0.5,  Color3.fromRGB(50, 55, 70))
+local bPlay      = button("> Играть  (F3)",    96,  0.5,  0,    Color3.fromRGB(35, 95, 55))
+local bStop      = button("[] Стоп",           96,  0.5,  0.5,  Color3.fromRGB(110, 45, 45))
+local bClear     = button("Очистить",          128, 0.34, 0)
+local bCopy      = button("Копировать",        128, 0.33, 0.34, Color3.fromRGB(48, 62, 78))
+local bPaste     = button("Вставить",          128, 0.33, 0.67, Color3.fromRGB(48, 62, 78))
 
 local function toggle(text, y, x, w, key, onChange)
     local b = mk("TextButton", {
@@ -537,20 +619,21 @@ local function toggle(text, y, x, w, key, onChange)
     return b
 end
 
-toggle("Зациклить", 128, 0, 0.5, "Loop", function() drawRoute() end)
-toggle("Траектория", 128, 0.5, 0.5, "ShowPath", function()
+toggle("Цикл", 160, 0, 0.30, "Loop", function() drawRoute() end)
+toggle("Линия", 160, 0.30, 0.32, "ShowPath", function()
     if not CFG.ShowPath then clearFolder(routeFolder); clearFolder(planFolder) end
     drawRoute()
 end)
+toggle("Патфайндинг", 160, 0.62, 0.38, "UsePathfind")
 
 mk("TextLabel", {
-    Size = UDim2.new(0.4, 0, 0, 24), Position = UDim2.new(0, 2, 0, 156),
+    Size = UDim2.new(0.4, 0, 0, 24), Position = UDim2.new(0, 2, 0, 188),
     BackgroundTransparency = 1, Font = Enum.Font.Gotham, TextSize = 11,
     TextColor3 = Color3.fromRGB(190, 190, 205), TextXAlignment = Enum.TextXAlignment.Left,
     Text = "Скорость:",
 }, body)
 local boxSpeed = mk("TextBox", {
-    Size = UDim2.new(0.22, 0, 0, 24), Position = UDim2.new(0.4, 0, 0, 156),
+    Size = UDim2.new(0.22, 0, 0, 24), Position = UDim2.new(0.4, 0, 0, 188),
     BackgroundColor3 = Color3.fromRGB(40, 44, 55), BorderSizePixel = 0,
     Font = Enum.Font.Gotham, TextSize = 11, TextColor3 = Color3.fromRGB(235, 235, 245),
     Text = tostring(CFG.Speed), ClearTextOnFocus = false,
@@ -563,13 +646,13 @@ boxSpeed.FocusLost:Connect(function()
 end)
 
 mk("TextLabel", {
-    Size = UDim2.new(0.2, 0, 0, 24), Position = UDim2.new(0.63, 0, 0, 156),
+    Size = UDim2.new(0.2, 0, 0, 24), Position = UDim2.new(0.63, 0, 0, 188),
     BackgroundTransparency = 1, Font = Enum.Font.Gotham, TextSize = 11,
     TextColor3 = Color3.fromRGB(190, 190, 205), TextXAlignment = Enum.TextXAlignment.Left,
     Text = "Пауза:",
 }, body)
 local boxWait = mk("TextBox", {
-    Size = UDim2.new(0.17, 0, 0, 24), Position = UDim2.new(0.83, 0, 0, 156),
+    Size = UDim2.new(0.17, 0, 0, 24), Position = UDim2.new(0.83, 0, 0, 188),
     BackgroundColor3 = Color3.fromRGB(40, 44, 55), BorderSizePixel = 0,
     Font = Enum.Font.Gotham, TextSize = 11, TextColor3 = Color3.fromRGB(235, 235, 245),
     Text = tostring(CFG.PostRemoteWait), ClearTextOnFocus = false,
@@ -577,15 +660,15 @@ local boxWait = mk("TextBox", {
 mk("UICorner", { CornerRadius = UDim.new(0, 6) }, boxWait)
 
 local boxName = mk("TextBox", {
-    Size = UDim2.new(0.44, -4, 0, 24), Position = UDim2.new(0, 0, 0, 186),
+    Size = UDim2.new(0.44, -4, 0, 24), Position = UDim2.new(0, 0, 0, 218),
     BackgroundColor3 = Color3.fromRGB(40, 44, 55), BorderSizePixel = 0,
     Font = Enum.Font.Gotham, TextSize = 11, TextColor3 = Color3.fromRGB(235, 235, 245),
-    PlaceholderText = "имя пресета", Text = "", ClearTextOnFocus = false,
+    PlaceholderText = "имя стратегии", Text = "", ClearTextOnFocus = false,
 }, body)
 mk("UICorner", { CornerRadius = UDim.new(0, 6) }, boxName)
 
 local bSave = mk("TextButton", {
-    Size = UDim2.new(0.28, -4, 0, 24), Position = UDim2.new(0.44, 0, 0, 186),
+    Size = UDim2.new(0.28, -4, 0, 24), Position = UDim2.new(0.44, 0, 0, 218),
     BackgroundColor3 = Color3.fromRGB(45, 85, 70), BorderSizePixel = 0,
     Font = Enum.Font.GothamMedium, TextSize = 11,
     TextColor3 = Color3.fromRGB(235, 245, 240), Text = "Сохранить",
@@ -593,15 +676,17 @@ local bSave = mk("TextButton", {
 mk("UICorner", { CornerRadius = UDim.new(0, 6) }, bSave)
 
 local bFiles = mk("TextButton", {
-    Size = UDim2.new(0.28, -4, 0, 24), Position = UDim2.new(0.72, 0, 0, 186),
+    Size = UDim2.new(0.28, -4, 0, 24), Position = UDim2.new(0.72, 0, 0, 218),
     BackgroundColor3 = Color3.fromRGB(50, 55, 80), BorderSizePixel = 0,
     Font = Enum.Font.GothamMedium, TextSize = 11,
-    TextColor3 = Color3.fromRGB(225, 230, 250), Text = "Пресеты v",
+    TextColor3 = Color3.fromRGB(225, 230, 250), Text = "Файлы v",
 }, body)
 mk("UICorner", { CornerRadius = UDim.new(0, 6) }, bFiles)
 
+local LIST_Y = 250
+
 local list = mk("ScrollingFrame", {
-    Size = UDim2.new(1, 0, 1, -248), Position = UDim2.new(0, 0, 0, 216),
+    Size = UDim2.new(1, 0, 1, -(LIST_Y + 32)), Position = UDim2.new(0, 0, 0, LIST_Y),
     BackgroundColor3 = Color3.fromRGB(18, 20, 25), BorderSizePixel = 0,
     ScrollBarThickness = 4, CanvasSize = UDim2.new(0, 0, 0, 0),
 }, body)
@@ -617,7 +702,7 @@ mk("UICorner", { CornerRadius = UDim.new(0, 6) }, presetPanel)
 mk("UIStroke", { Color = Color3.fromRGB(90, 80, 50), Thickness = 1 }, presetPanel)
 
 local filesPanel = mk("ScrollingFrame", {
-    Size = UDim2.new(1, 0, 1, -248), Position = UDim2.new(0, 0, 0, 216),
+    Size = UDim2.new(1, 0, 1, -(LIST_Y + 32)), Position = UDim2.new(0, 0, 0, LIST_Y),
     BackgroundColor3 = Color3.fromRGB(28, 31, 40), BorderSizePixel = 0,
     ScrollBarThickness = 4, CanvasSize = UDim2.new(0, 0, 0, 0),
     Visible = false, ZIndex = 5,
@@ -675,6 +760,17 @@ end
 
 local clipStep = nil
 
+local function smallBtn(parent, x, text, color, textColor)
+    local b = mk("TextButton", {
+        Size = UDim2.new(0, 19, 0, 18), Position = UDim2.new(1, x, 0, 2),
+        BackgroundColor3 = color, BorderSizePixel = 0,
+        Font = Enum.Font.GothamBold, TextSize = 10,
+        TextColor3 = textColor, Text = text,
+    }, parent)
+    mk("UICorner", { CornerRadius = UDim.new(0, 4) }, b)
+    return b
+end
+
 local function refreshList()
     for _, c in ipairs(list:GetChildren()) do
         if c:IsA("Frame") then c:Destroy() end
@@ -686,7 +782,7 @@ local function refreshList()
         }, list)
         mk("UICorner", { CornerRadius = UDim.new(0, 4) }, row)
         mk("TextLabel", {
-            Size = UDim2.new(1, -70, 1, 0), Position = UDim2.new(0, 6, 0, 0),
+            Size = UDim2.new(1, -108, 1, 0), Position = UDim2.new(0, 6, 0, 0),
             BackgroundTransparency = 1, Font = Enum.Font.Code, TextSize = 11,
             TextXAlignment = Enum.TextXAlignment.Left,
             TextColor3 = (s.type == "remote") and COL_REMOTE
@@ -695,30 +791,24 @@ local function refreshList()
             Text = stepLabel(i, s), TextTruncate = Enum.TextTruncate.AtEnd,
         }, row)
 
-        local dup = mk("TextButton", {
-            Size = UDim2.new(0, 20, 0, 18), Position = UDim2.new(1, -66, 0, 2),
-            BackgroundColor3 = Color3.fromRGB(40, 60, 80), BorderSizePixel = 0,
-            Font = Enum.Font.GothamBold, TextSize = 10,
-            TextColor3 = Color3.fromRGB(210, 230, 255), Text = "++",
-        }, row)
-        mk("UICorner", { CornerRadius = UDim.new(0, 4) }, dup)
+        local up   = smallBtn(row, -103, "^",  Color3.fromRGB(45, 55, 70), Color3.fromRGB(215, 230, 250))
+        local down = smallBtn(row, -83,  "v",  Color3.fromRGB(45, 55, 70), Color3.fromRGB(215, 230, 250))
+        local dup  = smallBtn(row, -63,  "++", Color3.fromRGB(40, 60, 80), Color3.fromRGB(210, 230, 255))
+        local cp   = smallBtn(row, -43,  "C",  Color3.fromRGB(55, 55, 70), Color3.fromRGB(225, 225, 240))
+        local del  = smallBtn(row, -23,  "x",  Color3.fromRGB(80, 40, 45), Color3.fromRGB(255, 210, 210))
 
-        local cp = mk("TextButton", {
-            Size = UDim2.new(0, 20, 0, 18), Position = UDim2.new(1, -44, 0, 2),
-            BackgroundColor3 = Color3.fromRGB(55, 55, 70), BorderSizePixel = 0,
-            Font = Enum.Font.GothamBold, TextSize = 10,
-            TextColor3 = Color3.fromRGB(225, 225, 240), Text = "C",
-        }, row)
-        mk("UICorner", { CornerRadius = UDim.new(0, 4) }, cp)
-
-        local del = mk("TextButton", {
-            Size = UDim2.new(0, 20, 0, 18), Position = UDim2.new(1, -22, 0, 2),
-            BackgroundColor3 = Color3.fromRGB(80, 40, 45), BorderSizePixel = 0,
-            Font = Enum.Font.GothamBold, TextSize = 11,
-            TextColor3 = Color3.fromRGB(255, 210, 210), Text = "x",
-        }, row)
-        mk("UICorner", { CornerRadius = UDim.new(0, 4) }, del)
-
+        up.MouseButton1Click:Connect(function()
+            if i > 1 then
+                steps[i], steps[i - 1] = steps[i - 1], steps[i]
+                refreshList(); drawRoute()
+            end
+        end)
+        down.MouseButton1Click:Connect(function()
+            if i < #steps then
+                steps[i], steps[i + 1] = steps[i + 1], steps[i]
+                refreshList(); drawRoute()
+            end
+        end)
         dup.MouseButton1Click:Connect(function()
             table.insert(steps, i + 1, copyStep(s))
             refreshList(); drawRoute()
@@ -726,7 +816,7 @@ local function refreshList()
         end)
         cp.MouseButton1Click:Connect(function()
             clipStep = copyStep(s)
-            setStatus("шаг " .. i .. " скопирован, жми «Вставить»")
+            setStatus("шаг " .. i .. " в буфере, жми «Вставить шаг»")
         end)
         del.MouseButton1Click:Connect(function()
             table.remove(steps, i)
@@ -747,7 +837,7 @@ local minimized = false
 btnMin.MouseButton1Click:Connect(function()
     minimized = not minimized
     body.Visible = not minimized
-    main.Size = minimized and UDim2.new(0, 330, 0, 34) or UDim2.new(0, 330, 0, 480)
+    main.Size = minimized and UDim2.new(0, WIDTH, 0, 34) or UDim2.new(0, WIDTH, 0, HEIGHT)
     btnMin.Text = minimized and "+" or "-"
 end)
 
@@ -761,7 +851,7 @@ end
 
 local function addRemoteFromLast()
     if not hookOk then
-        setStatus("хук remote не поддерживается executor'ом, используй «+ Действие»", false)
+        setStatus("хук remote недоступен, используй «+ Действие»", false)
         return
     end
     if not lastFired then
@@ -789,7 +879,7 @@ local function addRemoteFromLast()
     setStatus("записан remote: " .. lastFired.remote.Name)
 end
 
-local function addPreset(p)
+local function addPreset(p, quiet)
     local hrp = getHRP()
     local remote = resolvePath(p.remotePath)
     local vals, n = p.args()
@@ -809,12 +899,15 @@ local function addPreset(p)
         args       = args,
         argRefs    = argRefs,
     })
-    refreshList(); drawRoute()
-    if remote and args[1] then
-        setStatus("добавлено: " .. p.title)
-    else
-        setStatus("добавлено: " .. p.title .. " (объект не найден сейчас)", false)
+    if not quiet then
+        refreshList(); drawRoute()
+        if remote and args[1] then
+            setStatus("добавлено: " .. p.title)
+        else
+            setStatus("добавлено: " .. p.title .. " (объект не найден сейчас)", false)
+        end
     end
+    return remote ~= nil and args[1] ~= nil
 end
 
 for i, p in ipairs(PRESETS) do
@@ -833,6 +926,18 @@ end
 
 bPresets.MouseButton1Click:Connect(function()
     presetPanel.Visible = not presetPanel.Visible
+    if presetPanel.Visible then filesPanel.Visible = false end
+end)
+
+bClassic.MouseButton1Click:Connect(function()
+    local found = 0
+    for _, p in ipairs(PRESETS) do
+        if addPreset(p, true) then found = found + 1 end
+    end
+    refreshList(); drawRoute()
+    presetPanel.Visible = false
+    setStatus(string.format("подставлено 4 классических remote (найдено объектов: %d/4)", found),
+              found == #PRESETS)
 end)
 
 local function addWait()
@@ -845,6 +950,16 @@ end
 bRecPos.MouseButton1Click:Connect(addPosition)
 bRecRemote.MouseButton1Click:Connect(addRemoteFromLast)
 bWait.MouseButton1Click:Connect(addWait)
+
+bPasteStep.MouseButton1Click:Connect(function()
+    if not clipStep then
+        setStatus("буфер шага пуст, скопируй шаг кнопкой C", false)
+        return
+    end
+    table.insert(steps, copyStep(clipStep))
+    refreshList(); drawRoute()
+    setStatus("шаг вставлен в конец")
+end)
 
 bClear.MouseButton1Click:Connect(function()
     steps = {}
@@ -883,43 +998,49 @@ local function serialize()
         end
         table.insert(out, e)
     end
-    return HttpService:JSONEncode(out)
+    return HttpService:JSONEncode({ pathbot = 1, steps = out })
 end
 
 local function deserialize(json)
     local ok, data = pcall(function() return HttpService:JSONDecode(json) end)
     if not ok or type(data) ~= "table" then return false end
+    local arr = data.steps or data
+    if type(arr) ~= "table" or #arr == 0 then return false end
+
     local new = {}
-    for _, e in ipairs(data) do
-        local s = {
-            type = e.type,
-            pos  = Vector3.new(e.pos[1], e.pos[2], e.pos[3]),
-            time = e.time,
-        }
-        if e.type == "remote" then
-            s.title      = e.title
-            s.method     = e.method or "FireServer"
-            s.remotePath = e.remotePath
-            s.remoteRef  = e.remoteRef
-            s.remote     = resolveRef(e.remoteRef) or resolvePath(e.remotePath)
-            local n      = e.argsN or 0
-            local args, refs = { n = n }, {}
-            for i = 1, n do
-                local a = (e.args or {})[i]
-                if a and a.t == "Instance" then
-                    args[i], refs[i] = resolveRef(a.v), a.v
-                elseif a and a.t == "Vector3" then
-                    args[i], refs[i] = Vector3.new(a.v[1], a.v[2], a.v[3]), false
-                elseif a and a.t == "raw" then
-                    args[i], refs[i] = a.v, false
-                else
-                    args[i], refs[i] = nil, false
+    for _, e in ipairs(arr) do
+        if type(e) == "table" and type(e.pos) == "table" then
+            local s = {
+                type = e.type,
+                pos  = Vector3.new(e.pos[1], e.pos[2], e.pos[3]),
+                time = e.time,
+            }
+            if e.type == "remote" then
+                s.title      = e.title
+                s.method     = e.method or "FireServer"
+                s.remotePath = e.remotePath
+                s.remoteRef  = e.remoteRef
+                s.remote     = resolveRef(e.remoteRef) or resolvePath(e.remotePath)
+                local n      = e.argsN or 0
+                local args, refs = { n = n }, {}
+                for i = 1, n do
+                    local a = (e.args or {})[i]
+                    if a and a.t == "Instance" then
+                        args[i], refs[i] = resolveRef(a.v), a.v
+                    elseif a and a.t == "Vector3" then
+                        args[i], refs[i] = Vector3.new(a.v[1], a.v[2], a.v[3]), false
+                    elseif a and a.t == "raw" then
+                        args[i], refs[i] = a.v, false
+                    else
+                        args[i], refs[i] = nil, false
+                    end
                 end
+                s.args, s.argRefs = args, refs
             end
-            s.args, s.argRefs = args, refs
+            table.insert(new, s)
         end
-        table.insert(new, s)
     end
+    if #new == 0 then return false end
     steps = new
     refreshList(); drawRoute()
     return true
@@ -928,7 +1049,7 @@ end
 local FOLDER = "PathBot"
 
 local function fsReady()
-    if not (writefile and readfile and isfile) then return false end
+    if not (writefile and readfile) then return false end
     if isfolder and makefolder and not isfolder(FOLDER) then
         pcall(makefolder, FOLDER)
     end
@@ -944,7 +1065,7 @@ end
 local function savePreset(name)
     if not fsReady() then setStatus("executor не поддерживает файлы", false) return end
     name = sanitize(name)
-    if name == "" then name = "route_" .. os.date("%H%M%S") end
+    if name == "" then name = "strategy_" .. os.date("%H%M%S") end
     if #steps == 0 then setStatus("маршрут пуст, нечего сохранять", false) return end
     local path = FOLDER .. "/" .. name .. ".json"
     local ok = pcall(writefile, path, serialize())
@@ -959,7 +1080,7 @@ end
 local function loadPreset(path)
     local ok, json = pcall(readfile, path)
     if ok and json and deserialize(json) then
-        setStatus("загружено: " .. path .. " (" .. #steps .. " шагов)")
+        setStatus("загружено: " .. #steps .. " шагов")
     else
         setStatus("не удалось прочитать " .. path, false)
     end
@@ -991,9 +1112,9 @@ local function refreshFiles()
         }, filesPanel)
         mk("UICorner", { CornerRadius = UDim.new(0, 4) }, row)
         local load = mk("TextButton", {
-            Size = UDim2.new(1, -26, 1, 0), Position = UDim2.new(0, 0, 0, 0),
-            BackgroundTransparency = 1, Font = Enum.Font.Gotham, TextSize = 11,
-            TextXAlignment = Enum.TextXAlignment.Left, ZIndex = 7,
+            Size = UDim2.new(1, -26, 1, 0), BackgroundTransparency = 1,
+            Font = Enum.Font.Gotham, TextSize = 11, ZIndex = 7,
+            TextXAlignment = Enum.TextXAlignment.Left,
             TextColor3 = Color3.fromRGB(225, 230, 250), Text = "  " .. short,
             TextTruncate = Enum.TextTruncate.AtEnd,
         }, row)
@@ -1023,8 +1144,7 @@ local function refreshFiles()
         mk("TextLabel", {
             Size = UDim2.new(1, 0, 1, 0), BackgroundTransparency = 1, ZIndex = 7,
             Font = Enum.Font.Gotham, TextSize = 11, TextColor3 = Color3.fromRGB(170, 170, 190),
-            Text = "  пресетов пока нет",
-            TextXAlignment = Enum.TextXAlignment.Left,
+            Text = "  сохранённых стратегий нет", TextXAlignment = Enum.TextXAlignment.Left,
         }, row)
     end
     filesPanel.CanvasSize = UDim2.new(0, 0, 0, math.max(#files, 1) * 26 + 4)
@@ -1048,29 +1168,30 @@ boxName.FocusLost:Connect(function(enter)
 end)
 
 bCopy.MouseButton1Click:Connect(function()
+    if #steps == 0 then setStatus("маршрут пуст", false) return end
     local json = serialize()
-    local ok = pcall(function() setclipboard(json) end)
-    if not ok then pcall(function() toclipboard(json) end) end
-    pcall(function() writefile("PathBot_route.json", json) end)
-    setStatus("маршрут скопирован (PathBot_route.json)")
+    local done = false
+    if setclipboard then done = pcall(setclipboard, json) end
+    if not done and toclipboard then done = pcall(toclipboard, json) end
+    if fsReady() then pcall(writefile, FOLDER .. "/_clipboard.json", json) end
+    if done then
+        setStatus("стратегия (" .. #steps .. " шагов) в буфере обмена")
+    else
+        setStatus("буфер недоступен, стратегия в " .. FOLDER .. "/_clipboard.json", false)
+    end
 end)
 
 bPaste.MouseButton1Click:Connect(function()
-    if clipStep then
-        table.insert(steps, copyStep(clipStep))
-        refreshList(); drawRoute()
-        setStatus("шаг вставлен в конец")
-        return
-    end
     local json
-    pcall(function() json = (getclipboard or readclipboard)() end)
-    if (not json or json == "") then
-        pcall(function() json = readfile("PathBot_route.json") end)
+    local getter = getclipboard or readclipboard or get_clipboard
+    if getter then pcall(function() json = getter() end) end
+    if (not json or json == "") and readfile then
+        pcall(function() json = readfile(FOLDER .. "/_clipboard.json") end)
     end
-    if json and deserialize(json) then
-        setStatus("загружено шагов: " .. #steps)
+    if json and json ~= "" and deserialize(json) then
+        setStatus("вставлена стратегия: " .. #steps .. " шагов")
     else
-        setStatus("нечего вставлять", false)
+        setStatus("в буфере нет стратегии PathBot", false)
     end
 end)
 
