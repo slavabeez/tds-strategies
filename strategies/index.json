@@ -1,23 +1,6 @@
 {
  "items": [
   {
-   "file": "test-mt91p0f6.json",
-   "name": "test",
-   "hash": "d85e6026d7ba92c4",
-   "map": "U-Turn",
-   "difficulty": "Easy",
-   "mode": "survival",
-   "towers": [
-    "Gladiator",
-    "Commander"
-   ],
-   "actions": 35,
-   "author": "я",
-   "ts": "2026-08-25T19:15:40.002Z",
-   "stars": 0,
-   "raters": []
-  },
-  {
    "file": "farm-money-msyzgo27.json",
    "name": "farm money",
    "hash": "53d42f1a66dd3ca3",
