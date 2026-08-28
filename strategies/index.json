@@ -1,6 +1,24 @@
 {
  "items": [
   {
+   "file": "money-farm-new-mtdcmxg0.json",
+   "name": "money farm new",
+   "hash": "ec3f2aa64e94a82f",
+   "map": "Forgetten Docks",
+   "difficulty": "Frost",
+   "mode": "survival",
+   "towers": [
+    "Assassin",
+    "Freezer",
+    "Shotgunner"
+   ],
+   "actions": 43,
+   "author": "я",
+   "ts": "2026-08-28T19:33:03.315Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "skin-test-mt93o7u5.json",
    "name": "skin test",
    "hash": "f5e0129500820edd",
