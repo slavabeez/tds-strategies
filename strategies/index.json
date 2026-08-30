@@ -1,3 +1,22 @@
 {
- "items": []
+ "items": [
+  {
+   "file": "money-farm-new-mtfoylq4.json",
+   "name": "money farm new",
+   "hash": "ec3f2aa64e94a82f",
+   "map": "Forgetten Docks",
+   "difficulty": "Frost",
+   "mode": "survival",
+   "towers": [
+    "Assassin",
+    "Freezer",
+    "Shotgunner"
+   ],
+   "actions": 43,
+   "author": "я",
+   "ts": "2026-08-30T10:53:35.740Z",
+   "stars": 0,
+   "raters": []
+  }
+ ]
 }
