@@ -1,6 +1,24 @@
 {
  "items": [
   {
+   "file": "farm-6kch-mtfqz6d8.json",
+   "name": "Фарм 6к/ч",
+   "hash": "4fd70b705139d2cc",
+   "map": "Black Spot Exchange",
+   "difficulty": "Casual",
+   "mode": "survival",
+   "towers": [
+    "Militant",
+    "Shotgunner",
+    "Commander"
+   ],
+   "actions": 117,
+   "author": "gvozdi4ek",
+   "ts": "2026-08-30T11:50:01.724Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "money-farm-new-mtfoylq4.json",
    "name": "money farm new",
    "hash": "ec3f2aa64e94a82f",
