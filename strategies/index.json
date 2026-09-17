@@ -1,6 +1,25 @@
 {
  "items": [
   {
+   "file": "farm-falen-mu60mga4.json",
+   "name": "farm falen",
+   "hash": "82022b97e6b55340",
+   "map": "Simplicity",
+   "difficulty": "Fallen",
+   "mode": "survival",
+   "towers": [
+    "Militant",
+    "Pyromancer",
+    "Shotgunner",
+    "Commander"
+   ],
+   "actions": 95,
+   "author": "я",
+   "ts": "2026-09-17T21:02:04.780Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "farm-6kch-mtfqz6d8.json",
    "name": "Фарм 6к/ч",
    "hash": "4fd70b705139d2cc",
