@@ -1,6 +1,23 @@
 {
  "items": [
   {
+   "file": "easy-mode-militant-muzive7h.json",
+   "name": "easy mode militant",
+   "hash": "7c79bc228078e1d6",
+   "map": "Dead Ahead",
+   "difficulty": "Easy",
+   "mode": "survival",
+   "towers": [
+    "Militant",
+    "Commander"
+   ],
+   "actions": 52,
+   "author": "absolutsall",
+   "ts": "2026-10-08T12:38:14.189Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "frost-solo-muzg9sv2.json",
    "name": "Frost solo",
    "hash": "1c8ef6c414cb86ff",
