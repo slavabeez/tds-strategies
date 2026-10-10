@@ -1,0 +1,2135 @@
+{
+ "map": "Simplicity",
+ "towers": [
+  "Brawler",
+  "DJ Booth",
+  "Hacker",
+  "Scout",
+  "Engineer",
+  "EvolvedJuggernaut"
+ ],
+ "difficulty": "Frost",
+ "currency": "money",
+ "version": 1,
+ "createdAt": 1791605144,
+ "mode": "survival",
+ "actions": [
+  {
+   "cost": 300,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Brawler",
+   "y": 0.9999834895133972,
+   "wave": 0,
+   "prep": true,
+   "z": -4.42586612701416,
+   "t": "place",
+   "dt": 0,
+   "x": -17.71245574951172,
+   "cash": 750
+  },
+  {
+   "cost": 300,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Brawler",
+   "y": 1.0000004768371582,
+   "wave": 0,
+   "prep": true,
+   "z": -2.3718671798706055,
+   "t": "place",
+   "dt": 0,
+   "x": -17.745574951171875,
+   "cash": 450
+  },
+  {
+   "cost": 300,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Brawler",
+   "y": 0.9999834895133972,
+   "wave": 1,
+   "z": -6.441577911376953,
+   "t": "place",
+   "dt": 8.2,
+   "x": -17.74742889404297,
+   "cash": 578
+  },
+  {
+   "idx": 1,
+   "wave": 2,
+   "cost": 200,
+   "t": "upgrade",
+   "dt": 4,
+   "cash": 822
+  },
+  {
+   "idx": 1,
+   "wave": 3,
+   "cost": 1200,
+   "t": "upgrade",
+   "dt": 5.5,
+   "cash": 1323
+  },
+  {
+   "idx": 1,
+   "wave": 6,
+   "cost": 2500,
+   "t": "upgrade",
+   "dt": 7.4,
+   "cash": 3260
+  },
+  {
+   "cost": 840,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "DJ Booth",
+   "y": 0.9999870657920837,
+   "wave": 8,
+   "z": -9.000604629516602,
+   "t": "place",
+   "dt": 0.6,
+   "x": -8.39255142211914,
+   "cash": 2264
+  },
+  {
+   "idx": 2,
+   "wave": 8,
+   "cost": 200,
+   "t": "upgrade",
+   "dt": 5.9,
+   "cash": 1949
+  },
+  {
+   "idx": 2,
+   "wave": 8,
+   "cost": 1200,
+   "t": "upgrade",
+   "dt": 6.2,
+   "cash": 1749
+  },
+  {
+   "idx": 2,
+   "wave": 9,
+   "cost": 2500,
+   "t": "upgrade",
+   "dt": 8.6,
+   "cash": 3715
+  },
+  {
+   "cost": 806,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Hacker",
+   "y": 0.9999834895133972,
+   "wave": 10,
+   "z": -8.84177017211914,
+   "t": "place",
+   "dt": 5.5,
+   "x": -12.498106956481934,
+   "cash": 3542
+  },
+  {
+   "idx": 5,
+   "wave": 10,
+   "cost": 125,
+   "t": "upgrade",
+   "dt": 6.7,
+   "cash": 2861
+  },
+  {
+   "idx": 5,
+   "wave": 11,
+   "cost": 1337,
+   "t": "upgrade",
+   "dt": 0.2,
+   "cash": 2736
+  },
+  {
+   "idx": 5,
+   "wave": 11,
+   "t": "sell",
+   "dt": 6,
+   "cash": 2459
+  },
+  {
+   "idx": 4,
+   "wave": 11,
+   "t": "sell",
+   "dt": 7.6,
+   "cash": 5196
+  },
+  {
+   "idx": 3,
+   "wave": 11,
+   "t": "sell",
+   "dt": 8.2,
+   "cash": 5592
+  },
+  {
+   "idx": 1,
+   "wave": 11,
+   "t": "sell",
+   "dt": 8.7,
+   "cash": 5728
+  },
+  {
+   "idx": 2,
+   "wave": 12,
+   "t": "sell",
+   "dt": 1,
+   "cash": 7632
+  },
+  {
+   "cost": 300,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Brawler",
+   "y": 1.0000003576278687,
+   "wave": 0,
+   "prep": true,
+   "z": -1.9899511337280273,
+   "t": "place",
+   "x": -17.83835792541504,
+   "dt": 0,
+   "cash": 450
+  },
+  {
+   "cost": 299,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Brawler",
+   "y": 0.9999834895133972,
+   "wave": 1,
+   "z": -6.060431480407715,
+   "t": "place",
+   "x": -18.237485885620117,
+   "dt": 4.7,
+   "cash": 577
+  },
+  {
+   "idx": 1,
+   "wave": 2,
+   "cost": 200,
+   "t": "upgrade",
+   "cash": 338,
+   "dt": 2.7
+  },
+  {
+   "idx": 1,
+   "wave": 3,
+   "cost": 1200,
+   "t": "upgrade",
+   "cash": 1324,
+   "dt": 5.4
+  },
+  {
+   "cost": 499,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 0.99998939037323,
+   "wave": 0,
+   "prep": true,
+   "z": -8.854814529418945,
+   "t": "place",
+   "x": -16.199970245361328,
+   "dt": 0,
+   "cash": 750
+  },
+  {
+   "cost": 250,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 0.9999911189079285,
+   "wave": 0,
+   "prep": true,
+   "z": -8.962091445922852,
+   "t": "place",
+   "x": -13.174474716186523,
+   "dt": 0,
+   "cash": 500
+  },
+  {
+   "cost": 250,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 0.9999932646751404,
+   "wave": 0,
+   "prep": true,
+   "z": -11.861530303955078,
+   "t": "place",
+   "x": -16.301652908325195,
+   "dt": 0,
+   "cash": 250
+  },
+  {
+   "cost": 236,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 0.9999904632568359,
+   "wave": 1,
+   "z": -11.966231346130371,
+   "t": "place",
+   "x": -13.285379409790039,
+   "dt": 3.9,
+   "cash": 402
+  },
+  {
+   "idx": 1,
+   "wave": 2,
+   "cost": 150,
+   "t": "upgrade",
+   "cash": 193,
+   "dt": 0.6
+  },
+  {
+   "idx": 1,
+   "wave": 3,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 602,
+   "dt": 1.7
+  },
+  {
+   "idx": 3,
+   "wave": 3,
+   "cost": 150,
+   "t": "upgrade",
+   "cash": 676,
+   "dt": 5.5
+  },
+  {
+   "idx": 3,
+   "wave": 4,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 628,
+   "dt": 1.8
+  },
+  {
+   "idx": 2,
+   "wave": 4,
+   "cost": 150,
+   "t": "upgrade",
+   "cash": 789,
+   "dt": 4.6
+  },
+  {
+   "idx": 2,
+   "wave": 4,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 688,
+   "dt": 5
+  },
+  {
+   "idx": 4,
+   "wave": 5,
+   "cost": 150,
+   "t": "upgrade",
+   "cash": 182,
+   "dt": 1.8
+  },
+  {
+   "idx": 4,
+   "wave": 5,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 993,
+   "dt": 5.5
+  },
+  {
+   "cost": 390,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 1.0000005960464478,
+   "wave": 6,
+   "z": -3.411484718322754,
+   "t": "place",
+   "x": -12.22695541381836,
+   "dt": 1.7,
+   "cash": 573
+  },
+  {
+   "idx": 5,
+   "wave": 6,
+   "cost": 150,
+   "t": "upgrade",
+   "cash": 333,
+   "dt": 2.7
+  },
+  {
+   "idx": 5,
+   "wave": 6,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 1255,
+   "dt": 6.9
+  },
+  {
+   "cost": 395,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 1.0000007152557373,
+   "wave": 7,
+   "z": -3.6332387924194336,
+   "t": "place",
+   "x": -9.165618896484375,
+   "dt": 4.2,
+   "cash": 995
+  },
+  {
+   "idx": 6,
+   "wave": 7,
+   "cost": 150,
+   "t": "upgrade",
+   "cash": 745,
+   "dt": 4.7
+  },
+  {
+   "idx": 6,
+   "wave": 7,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 745,
+   "dt": 4.9
+  },
+  {
+   "idx": 6,
+   "wave": 7,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 655,
+   "dt": 5.7
+  },
+  {
+   "cost": 912,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 1.0000001192092896,
+   "wave": 8,
+   "z": -0.4106292724609375,
+   "t": "place",
+   "x": -12.67763614654541,
+   "dt": 0.9,
+   "cash": 1146
+  },
+  {
+   "idx": 7,
+   "wave": 8,
+   "cost": 150,
+   "t": "upgrade",
+   "cash": 945,
+   "dt": 1.6
+  },
+  {
+   "idx": 7,
+   "wave": 8,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 947,
+   "dt": 1.8
+  },
+  {
+   "cost": 294,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 0.9999831914901733,
+   "wave": 8,
+   "z": -0.5897386074066162,
+   "t": "place",
+   "x": -9.663106918334961,
+   "dt": 5.1,
+   "cash": 716
+  },
+  {
+   "idx": 8,
+   "wave": 8,
+   "cost": 150,
+   "t": "upgrade",
+   "cash": 466,
+   "dt": 6.1
+  },
+  {
+   "idx": 8,
+   "wave": 8,
+   "cost": 600,
+   "t": "upgrade",
+   "cash": 1403,
+   "dt": 6.8
+  },
+  {
+   "cost": 955,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Hacker",
+   "y": 0.9999873042106628,
+   "wave": 9,
+   "z": -8.828115463256836,
+   "t": "place",
+   "x": -10.154499053955078,
+   "dt": 6.3,
+   "cash": 1543
+  },
+  {
+   "idx": 9,
+   "wave": 9,
+   "cost": 125,
+   "t": "upgrade",
+   "cash": 693,
+   "dt": 7.1
+  },
+  {
+   "idx": 9,
+   "wave": 9,
+   "cost": 1337,
+   "t": "upgrade",
+   "cash": 1858,
+   "dt": 8.7
+  },
+  {
+   "cost": 850,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "DJ Booth",
+   "y": 0.9999995827674866,
+   "wave": 11,
+   "z": 2.9624786376953125,
+   "t": "place",
+   "x": -7.72254753112793,
+   "dt": 3.1,
+   "cash": 3448
+  },
+  {
+   "idx": 10,
+   "wave": 11,
+   "cost": 300,
+   "t": "upgrade",
+   "cash": 2960,
+   "dt": 5.5
+  },
+  {
+   "idx": 10,
+   "wave": 11,
+   "cost": 1250,
+   "t": "upgrade",
+   "cash": 2795,
+   "dt": 6
+  },
+  {
+   "idx": 10,
+   "wave": 11,
+   "cost": 3000,
+   "t": "upgrade",
+   "cash": 3357,
+   "dt": 8.5
+  },
+  {
+   "idx": 10,
+   "wave": 12,
+   "name": "Track",
+   "value": "Green",
+   "t": "option",
+   "cash": 462,
+   "dt": 0.3
+  },
+  {
+   "idx": 10,
+   "wave": 12,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 752,
+   "dt": 0.8
+  },
+  {
+   "cost": 600,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Engineer",
+   "y": 0.9999881386756897,
+   "wave": 12,
+   "z": -3.7583727836608887,
+   "t": "place",
+   "x": -6.08871603012085,
+   "dt": 6.6,
+   "cash": 2154
+  },
+  {
+   "idx": 11,
+   "wave": 12,
+   "cost": 292,
+   "t": "upgrade",
+   "cash": 1554,
+   "dt": 7.3
+  },
+  {
+   "idx": 11,
+   "wave": 12,
+   "cost": 810,
+   "t": "upgrade",
+   "cash": 2784,
+   "dt": 7.8
+  },
+  {
+   "cost": 1484,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Engineer",
+   "y": 0.9999918341636658,
+   "wave": 13,
+   "z": -3.6100118160247803,
+   "t": "place",
+   "x": -3.0242881774902344,
+   "dt": 0.1,
+   "cash": 2088
+  },
+  {
+   "idx": 12,
+   "wave": 13,
+   "cost": 292,
+   "t": "upgrade",
+   "cash": 1706,
+   "dt": 0.9
+  },
+  {
+   "idx": 12,
+   "wave": 13,
+   "cost": 810,
+   "t": "upgrade",
+   "cash": 1416,
+   "dt": 1.2
+  },
+  {
+   "cost": 600,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Engineer",
+   "y": 0.9999831914901733,
+   "wave": 13,
+   "z": -3.599219560623169,
+   "t": "place",
+   "x": 0.13427400588989258,
+   "dt": 3.5,
+   "cash": 1072
+  },
+  {
+   "idx": 13,
+   "wave": 13,
+   "cost": 292,
+   "t": "upgrade",
+   "cash": 683,
+   "dt": 4.6
+  },
+  {
+   "idx": 10,
+   "wave": 13,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 906,
+   "dt": 7
+  },
+  {
+   "idx": 13,
+   "wave": 13,
+   "cost": 810,
+   "t": "upgrade",
+   "cash": 1721,
+   "dt": 7.8
+  },
+  {
+   "cost": 1382,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Engineer",
+   "y": 0.9999886155128479,
+   "wave": 14,
+   "z": -9.009429931640625,
+   "t": "place",
+   "x": -7.131405353546143,
+   "dt": 1.5,
+   "cash": 2665
+  },
+  {
+   "idx": 14,
+   "wave": 14,
+   "cost": 292,
+   "t": "upgrade",
+   "cash": 2065,
+   "dt": 2.1
+  },
+  {
+   "idx": 14,
+   "wave": 14,
+   "cost": 810,
+   "t": "upgrade",
+   "cash": 1969,
+   "dt": 2.2
+  },
+  {
+   "cost": 672,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Engineer",
+   "y": 1.0000014305114746,
+   "wave": 14,
+   "z": -8.950008392333984,
+   "t": "place",
+   "x": -4.0582170486450195,
+   "dt": 3.9,
+   "cash": 1532
+  },
+  {
+   "idx": 15,
+   "wave": 14,
+   "cost": 292,
+   "t": "upgrade",
+   "cash": 1057,
+   "dt": 4.5
+  },
+  {
+   "idx": 15,
+   "wave": 14,
+   "cost": 810,
+   "t": "upgrade",
+   "cash": 925,
+   "dt": 5.6
+  },
+  {
+   "cost": 1094,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Engineer",
+   "y": 0.9999960660934448,
+   "wave": 15,
+   "z": -8.823017120361328,
+   "t": "place",
+   "x": -0.9903113842010498,
+   "dt": 1,
+   "cash": 2337
+  },
+  {
+   "idx": 16,
+   "wave": 15,
+   "cost": 292,
+   "t": "upgrade",
+   "cash": 1955,
+   "dt": 1.8
+  },
+  {
+   "idx": 16,
+   "wave": 15,
+   "cost": 810,
+   "t": "upgrade",
+   "cash": 1853,
+   "dt": 2.3
+  },
+  {
+   "idx": 10,
+   "wave": 15,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 2955,
+   "dt": 6.8
+  },
+  {
+   "idx": 11,
+   "wave": 15,
+   "cost": 1869,
+   "t": "upgrade",
+   "cash": 3555,
+   "dt": 7.3
+  },
+  {
+   "idx": 12,
+   "wave": 16,
+   "cost": 1869,
+   "t": "upgrade",
+   "cash": 5386,
+   "dt": 6
+  },
+  {
+   "idx": 13,
+   "wave": 16,
+   "cost": 1869,
+   "t": "upgrade",
+   "cash": 3720,
+   "dt": 6.6
+  },
+  {
+   "idx": 15,
+   "wave": 16,
+   "cost": 1869,
+   "t": "upgrade",
+   "cash": 2839,
+   "dt": 8.2
+  },
+  {
+   "idx": 14,
+   "wave": 17,
+   "cost": 1869,
+   "t": "upgrade",
+   "cash": 3207,
+   "dt": 2.4
+  },
+  {
+   "idx": 10,
+   "wave": 17,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 2076,
+   "dt": 4.6
+  },
+  {
+   "idx": 16,
+   "wave": 17,
+   "cost": 1869,
+   "t": "upgrade",
+   "cash": 3044,
+   "dt": 5.1
+  },
+  {
+   "idx": 6,
+   "wave": 17,
+   "cost": 1620,
+   "t": "upgrade",
+   "cash": 5522,
+   "dt": 8.9
+  },
+  {
+   "idx": 8,
+   "wave": 17,
+   "cost": 1620,
+   "t": "upgrade",
+   "cash": 3902,
+   "dt": 9.8
+  },
+  {
+   "idx": 7,
+   "wave": 18,
+   "cost": 1620,
+   "t": "upgrade",
+   "cash": 2845,
+   "dt": 1.6
+  },
+  {
+   "idx": 5,
+   "wave": 18,
+   "cost": 1620,
+   "t": "upgrade",
+   "cash": 1872,
+   "dt": 3.6
+  },
+  {
+   "idx": 10,
+   "wave": 19,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 3699,
+   "dt": 0.5
+  },
+  {
+   "idx": 11,
+   "wave": 19,
+   "cost": 5625,
+   "t": "upgrade",
+   "cash": 6763,
+   "dt": 3.3
+  },
+  {
+   "idx": 12,
+   "wave": 20,
+   "cost": 5625,
+   "t": "upgrade",
+   "cash": 7968,
+   "dt": 2.7
+  },
+  {
+   "idx": 13,
+   "wave": 20,
+   "cost": 5625,
+   "t": "upgrade",
+   "cash": 5837,
+   "dt": 10
+  },
+  {
+   "idx": 10,
+   "wave": 20,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 1094,
+   "dt": 12.1
+  },
+  {
+   "idx": 14,
+   "wave": 21,
+   "cost": 5625,
+   "t": "upgrade",
+   "cash": 6264,
+   "dt": 3.9
+  },
+  {
+   "idx": 10,
+   "wave": 21,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 4925,
+   "dt": 13.5
+  },
+  {
+   "idx": 15,
+   "wave": 21,
+   "cost": 5625,
+   "t": "upgrade",
+   "cash": 5875,
+   "dt": 14.8
+  },
+  {
+   "idx": 16,
+   "wave": 22,
+   "cost": 5625,
+   "t": "upgrade",
+   "cash": 7520,
+   "dt": 5.3
+  },
+  {
+   "idx": 2,
+   "wave": 23,
+   "cost": 1620,
+   "t": "upgrade",
+   "cash": 8942,
+   "dt": 0.1
+  },
+  {
+   "idx": 1,
+   "wave": 23,
+   "cost": 1620,
+   "t": "upgrade",
+   "cash": 7471,
+   "dt": 0.5
+  },
+  {
+   "idx": 3,
+   "wave": 23,
+   "cost": 1800,
+   "t": "upgrade",
+   "cash": 6128,
+   "dt": 0.9
+  },
+  {
+   "idx": 4,
+   "wave": 23,
+   "cost": 1620,
+   "t": "upgrade",
+   "cash": 4490,
+   "dt": 1.3
+  },
+  {
+   "cost": 921,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Hacker",
+   "y": 0.9999831914901733,
+   "wave": 23,
+   "z": -3.481304883956909,
+   "t": "place",
+   "x": 3.1702284812927246,
+   "dt": 8.3,
+   "cash": 8182
+  },
+  {
+   "idx": 17,
+   "wave": 23,
+   "cost": 112,
+   "t": "upgrade",
+   "cash": 7929,
+   "dt": 9.2
+  },
+  {
+   "idx": 17,
+   "wave": 23,
+   "cost": 1203,
+   "t": "upgrade",
+   "cash": 7817,
+   "dt": 9.6
+  },
+  {
+   "idx": 10,
+   "wave": 23,
+   "cost": 8000,
+   "t": "upgrade",
+   "cash": 9699,
+   "dt": 13.3
+  },
+  {
+   "idx": 10,
+   "wave": 23,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 2062,
+   "dt": 14.4
+  },
+  {
+   "idx": 10,
+   "wave": 24,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 11835,
+   "dt": 5
+  },
+  {
+   "idx": 10,
+   "wave": 24,
+   "cost": 20000,
+   "t": "upgrade",
+   "cash": 21868,
+   "dt": 16.1
+  },
+  {
+   "idx": 10,
+   "wave": 25,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 4936,
+   "dt": 1
+  },
+  {
+   "idx": 10,
+   "wave": 25,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 8263,
+   "dt": 2.1
+  },
+  {
+   "idx": 11,
+   "wave": 25,
+   "cost": 11875,
+   "t": "upgrade",
+   "cash": 11880,
+   "dt": 6
+  },
+  {
+   "idx": 12,
+   "wave": 25,
+   "cost": 11875,
+   "t": "upgrade",
+   "cash": 16873,
+   "dt": 23
+  },
+  {
+   "idx": 10,
+   "wave": 26,
+   "name": "Track",
+   "value": "Green",
+   "t": "option",
+   "cash": 8186,
+   "dt": 0.7
+  },
+  {
+   "idx": 10,
+   "wave": 26,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 8186,
+   "dt": 1.5
+  },
+  {
+   "idx": 13,
+   "wave": 26,
+   "cost": 10625,
+   "t": "upgrade",
+   "cash": 10780,
+   "dt": 2.8
+  },
+  {
+   "idx": 14,
+   "wave": 26,
+   "cost": 10625,
+   "t": "upgrade",
+   "cash": 11010,
+   "dt": 12.4
+  },
+  {
+   "idx": 10,
+   "wave": 26,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 8531,
+   "dt": 19.3
+  },
+  {
+   "idx": 15,
+   "wave": 27,
+   "cost": 10625,
+   "t": "upgrade",
+   "cash": 11516,
+   "dt": 1.5
+  },
+  {
+   "idx": 16,
+   "wave": 27,
+   "cost": 10625,
+   "t": "upgrade",
+   "cash": 11058,
+   "dt": 14.6
+  },
+  {
+   "idx": 10,
+   "wave": 27,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 2683,
+   "dt": 16.1
+  },
+  {
+   "idx": 6,
+   "wave": 28,
+   "cost": 3400,
+   "t": "upgrade",
+   "cash": 10650,
+   "dt": 3.3
+  },
+  {
+   "idx": 10,
+   "wave": 28,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 7250,
+   "dt": 5.6
+  },
+  {
+   "idx": 8,
+   "wave": 28,
+   "cost": 3800,
+   "t": "upgrade",
+   "cash": 7250,
+   "dt": 6.4
+  },
+  {
+   "idx": 7,
+   "wave": 28,
+   "cost": 3800,
+   "t": "upgrade",
+   "cash": 4485,
+   "dt": 7.5
+  },
+  {
+   "idx": 5,
+   "wave": 28,
+   "cost": 3800,
+   "t": "upgrade",
+   "cash": 5425,
+   "dt": 10.1
+  },
+  {
+   "idx": 2,
+   "wave": 28,
+   "cost": 3800,
+   "t": "upgrade",
+   "cash": 5077,
+   "dt": 12.6
+  },
+  {
+   "idx": 1,
+   "wave": 28,
+   "cost": 3800,
+   "t": "upgrade",
+   "cash": 4514,
+   "dt": 15.1
+  },
+  {
+   "idx": 4,
+   "wave": 28,
+   "cost": 3800,
+   "t": "upgrade",
+   "cash": 10443,
+   "dt": 18.9
+  },
+  {
+   "idx": 3,
+   "wave": 28,
+   "cost": 3800,
+   "t": "upgrade",
+   "cash": 7290,
+   "dt": 19.7
+  },
+  {
+   "idx": 10,
+   "wave": 28,
+   "name": "Track",
+   "value": "Green",
+   "t": "option",
+   "cash": 12715,
+   "dt": 26.9
+  },
+  {
+   "idx": 10,
+   "wave": 28,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 12715,
+   "dt": 27.7
+  },
+  {
+   "cost": 13743,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "EvolvedJuggernaut",
+   "y": 0.9999831914901733,
+   "wave": 29,
+   "z": 2.4643964767456055,
+   "t": "place",
+   "x": -2.13655686378479,
+   "dt": 3.5,
+   "cash": 22550
+  },
+  {
+   "idx": 18,
+   "wave": 29,
+   "cost": 2380,
+   "t": "upgrade",
+   "cash": 15594,
+   "dt": 4.5
+  },
+  {
+   "idx": 18,
+   "wave": 29,
+   "cost": 5950,
+   "t": "upgrade",
+   "cash": 13232,
+   "dt": 4.9
+  },
+  {
+   "idx": 10,
+   "wave": 29,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 16162,
+   "dt": 12.6
+  },
+  {
+   "idx": 10,
+   "wave": 29,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 19709,
+   "dt": 15.3
+  },
+  {
+   "idx": 10,
+   "wave": 29,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 21434,
+   "dt": 16.4
+  },
+  {
+   "idx": 10,
+   "wave": 29,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 23159,
+   "dt": 17.1
+  },
+  {
+   "idx": 11,
+   "wave": 29,
+   "cost": 27625,
+   "t": "upgrade",
+   "cash": 28409,
+   "dt": 19.8
+  },
+  {
+   "idx": 10,
+   "wave": 30,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 12557,
+   "dt": 4.1
+  },
+  {
+   "idx": 10,
+   "wave": 30,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 15606,
+   "dt": 6.9
+  },
+  {
+   "idx": 10,
+   "wave": 30,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 16885,
+   "dt": 7.1
+  },
+  {
+   "idx": 12,
+   "wave": 30,
+   "cost": 30875,
+   "t": "upgrade",
+   "cash": 30925,
+   "dt": 18.6
+  },
+  {
+   "idx": 10,
+   "wave": 30,
+   "name": "Track",
+   "value": "Green",
+   "t": "option",
+   "cash": 5828,
+   "dt": 23.9
+  },
+  {
+   "idx": 10,
+   "wave": 30,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 5828,
+   "dt": 24.4
+  },
+  {
+   "idx": 13,
+   "wave": 31,
+   "cost": 27625,
+   "t": "upgrade",
+   "cash": 30292,
+   "dt": 13.2
+  },
+  {
+   "idx": 10,
+   "wave": 32,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 16971,
+   "dt": 1.9
+  },
+  {
+   "idx": 14,
+   "wave": 32,
+   "cost": 27625,
+   "t": "upgrade",
+   "cash": 29256,
+   "dt": 5.5
+  },
+  {
+   "idx": 10,
+   "wave": 32,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 24471,
+   "dt": 16.8
+  },
+  {
+   "idx": 15,
+   "wave": 32,
+   "cost": 27625,
+   "t": "upgrade",
+   "cash": 32535,
+   "dt": 18.6
+  },
+  {
+   "idx": 10,
+   "wave": 33,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 21008,
+   "dt": 3.1
+  },
+  {
+   "idx": 16,
+   "wave": 33,
+   "cost": 30875,
+   "t": "upgrade",
+   "cash": 44401,
+   "dt": 12.5
+  },
+  {
+   "idx": 18,
+   "wave": 33,
+   "cost": 16340,
+   "t": "upgrade",
+   "cash": 20696,
+   "dt": 15.3
+  },
+  {
+   "idx": 18,
+   "path": 1,
+   "cost": 33250,
+   "cash": 38781,
+   "t": "upgrade",
+   "wave": 33,
+   "dt": 28
+  },
+  {
+   "idx": 10,
+   "wave": 33,
+   "name": "Track",
+   "value": "Green",
+   "t": "option",
+   "cash": 23126,
+   "dt": 34.8
+  },
+  {
+   "idx": 10,
+   "wave": 33,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 23126,
+   "dt": 35.3
+  },
+  {
+   "idx": 9,
+   "wave": 34,
+   "cost": 5525,
+   "t": "upgrade",
+   "cash": 57803,
+   "dt": 9.9
+  },
+  {
+   "idx": 9,
+   "wave": 34,
+   "cost": 20400,
+   "t": "upgrade",
+   "cash": 53359,
+   "dt": 10.6
+  },
+  {
+   "idx": 9,
+   "path": 2,
+   "cost": 51000,
+   "cash": 45266,
+   "t": "upgrade",
+   "wave": 34,
+   "dt": 14
+  },
+  {
+   "idx": 10,
+   "wave": 34,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 4929,
+   "dt": 16.8
+  },
+  {
+   "idx": 17,
+   "wave": 34,
+   "cost": 5525,
+   "t": "upgrade",
+   "cash": 14571,
+   "dt": 19.5
+  },
+  {
+   "cash": 11296,
+   "t": "skip",
+   "wave": 34,
+   "dt": 21.9
+  },
+  {
+   "idx": 17,
+   "wave": 35,
+   "cost": 20400,
+   "t": "upgrade",
+   "cash": 21144,
+   "dt": 2.2
+  },
+  {
+   "idx": 10,
+   "wave": 35,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 35902,
+   "dt": 8.2
+  },
+  {
+   "idx": 10,
+   "wave": 35,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 40930,
+   "dt": 8.9
+  },
+  {
+   "idx": 17,
+   "path": 1,
+   "cost": 57000,
+   "cash": 58101,
+   "t": "upgrade",
+   "wave": 35,
+   "dt": 11.7
+  },
+  {
+   "idx": 10,
+   "wave": 35,
+   "name": "Track",
+   "value": "Green",
+   "t": "option",
+   "cash": 62722,
+   "dt": 27.4
+  },
+  {
+   "idx": 10,
+   "wave": 35,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 62722,
+   "dt": 27.9
+  },
+  {
+   "idx": 18,
+   "path": 1,
+   "cost": 51000,
+   "cash": 64747,
+   "t": "upgrade",
+   "wave": 36,
+   "dt": 0.5
+  },
+  {
+   "cash": 86149,
+   "t": "skip",
+   "wave": 36,
+   "dt": 19.1
+  },
+  {
+   "idx": 10,
+   "wave": 36,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 97411,
+   "dt": 20.9
+  },
+  {
+   "idx": 18,
+   "path": 1,
+   "cost": 80750,
+   "cash": 99436,
+   "t": "upgrade",
+   "wave": 37,
+   "dt": 0.5
+  },
+  {
+   "idx": 10,
+   "wave": 37,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 82522,
+   "dt": 14.1
+  },
+  {
+   "idx": 10,
+   "wave": 37,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 88240,
+   "dt": 15
+  },
+  {
+   "idx": 10,
+   "wave": 37,
+   "name": "Track",
+   "value": "Green",
+   "t": "option",
+   "cash": 151491,
+   "dt": 38.4
+  },
+  {
+   "idx": 10,
+   "wave": 37,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 151779,
+   "dt": 38.9
+  },
+  {
+   "idx": 18,
+   "path": 1,
+   "cost": 148750,
+   "cash": 158008,
+   "t": "upgrade",
+   "wave": 38,
+   "dt": 2
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 13610,
+   "dt": 4.5
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 13690,
+   "dt": 4.7
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 13848,
+   "dt": 4.9
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 13850,
+   "dt": 5
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 14643,
+   "dt": 5.2
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 14974,
+   "dt": 5.4
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 14975,
+   "dt": 5.9
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 14975,
+   "dt": 6.1
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 16095,
+   "dt": 6.3
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Track",
+   "value": "Red",
+   "t": "option",
+   "cash": 16100,
+   "dt": 6.5
+  },
+  {
+   "idx": 10,
+   "wave": 38,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 36986,
+   "dt": 14.6
+  },
+  {
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 0.9999831914901733,
+   "wave": 39,
+   "z": -3.3079581260681152,
+   "t": "place",
+   "x": 6.171933650970459,
+   "dt": 5.3,
+   "cash": 87787
+  },
+  {
+   "idx": 19,
+   "wave": 39,
+   "cost": 142,
+   "t": "upgrade",
+   "cash": 90549,
+   "dt": 6
+  },
+  {
+   "idx": 19,
+   "wave": 39,
+   "cost": 570,
+   "t": "upgrade",
+   "cash": 91479,
+   "dt": 6.1
+  },
+  {
+   "idx": 19,
+   "wave": 39,
+   "cost": 1710,
+   "t": "upgrade",
+   "cash": 91600,
+   "dt": 6.3
+  },
+  {
+   "idx": 19,
+   "wave": 39,
+   "cost": 1710,
+   "t": "upgrade",
+   "cash": 91191,
+   "dt": 6.4
+  },
+  {
+   "idx": 19,
+   "wave": 39,
+   "cost": 3800,
+   "t": "upgrade",
+   "cash": 91689,
+   "dt": 6.5
+  },
+  {
+   "cost": 655,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Scout",
+   "y": 0.9999831914901733,
+   "wave": 39,
+   "z": -6.234673500061035,
+   "t": "place",
+   "x": 5.334414005279541,
+   "dt": 7.7,
+   "cash": 91678
+  },
+  {
+   "idx": 20,
+   "wave": 39,
+   "cost": 142,
+   "t": "upgrade",
+   "cash": 92688,
+   "dt": 8.4
+  },
+  {
+   "idx": 20,
+   "wave": 39,
+   "cost": 570,
+   "t": "upgrade",
+   "cash": 92688,
+   "dt": 8.5
+  },
+  {
+   "idx": 20,
+   "wave": 39,
+   "cost": 1710,
+   "t": "upgrade",
+   "cash": 92619,
+   "dt": 8.6
+  },
+  {
+   "idx": 20,
+   "wave": 39,
+   "cost": 1710,
+   "t": "upgrade",
+   "cash": 96517,
+   "dt": 8.8
+  },
+  {
+   "cash": 202102,
+   "t": "skip",
+   "wave": 39,
+   "dt": 24
+  },
+  {
+   "idx": 9,
+   "wave": 40,
+   "name": "Hologram Tower",
+   "t": "ability",
+   "cash": 281294,
+   "dt": 12.8
+  },
+  {
+   "idx": 10,
+   "wave": 40,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 142937,
+   "dt": 36.8
+  },
+  {
+   "idx": 9,
+   "wave": 40,
+   "name": "Hologram Tower",
+   "t": "ability",
+   "cash": 570417,
+   "dt": 76.3
+  },
+  {
+   "idx": 9,
+   "wave": 40,
+   "name": "Hologram Tower",
+   "t": "ability",
+   "cash": 594417,
+   "dt": 81.4
+  },
+  {
+   "idx": 10,
+   "wave": 40,
+   "name": "Drop The Beat",
+   "t": "ability",
+   "cash": 420636,
+   "dt": 89.7
+  }
+ ],
+ "name": "frost",
+ "author": "absolutsall",
+ "uploadedAt": "2026-10-10T04:05:46.111Z"
+}
