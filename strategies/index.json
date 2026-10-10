@@ -1,6 +1,24 @@
 {
  "items": [
   {
+   "file": "win-farm-easy-mode-mv1ot65p.json",
+   "name": "win farm easy mode",
+   "hash": "350db147c463b240",
+   "map": "Fungi Island",
+   "difficulty": "Easy",
+   "mode": "survival",
+   "towers": [
+    "Brawler",
+    "Gladiator",
+    "Freezer"
+   ],
+   "actions": 59,
+   "author": "bay 5.1",
+   "ts": "2026-10-10T01:00:00.494Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "easy-mode-militant-muzive7h.json",
    "name": "easy mode militant",
    "hash": "7c79bc228078e1d6",
