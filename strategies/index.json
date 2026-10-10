@@ -1,6 +1,24 @@
 {
  "items": [
   {
+   "file": "operator-xp-farm-mv1sfzol.json",
+   "name": "operator xp farm",
+   "hash": "83e6a55511525239",
+   "map": "Dead Ahead",
+   "difficulty": "Easy",
+   "mode": "survival",
+   "towers": [
+    "Pyromancer",
+    "Shotgunner",
+    "EvolvedOperator"
+   ],
+   "actions": 32,
+   "author": "absolutsall",
+   "ts": "2026-10-10T02:41:44.037Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "test-win-farm-mv1qaaxl.json",
    "name": "test win farm",
    "hash": "68464cf7d154efd4",
