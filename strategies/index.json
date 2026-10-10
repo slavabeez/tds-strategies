@@ -21,29 +21,6 @@
    "raters": []
   },
   {
-   "file": "frost-mv1vg266.json",
-   "name": "frost",
-   "hash": "7c781168e288791b",
-   "map": "Simplicity",
-   "difficulty": "Frost",
-   "mode": "survival",
-   "towers": [
-    "Brawler",
-    "DJ Booth",
-    "Hacker",
-    "Scout",
-    "Engineer",
-    "EvolvedJuggernaut"
-   ],
-   "actions": 204,
-   "author": "absolutsall",
-   "ts": "2026-10-10T04:05:46.111Z",
-   "stars": 1,
-   "raters": [
-    "ecf217131d"
-   ]
-  },
-  {
    "file": "operator-xp-farm-mv1sfzol.json",
    "name": "operator xp farm",
    "hash": "83e6a55511525239",
