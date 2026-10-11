@@ -184,7 +184,13 @@
    "author": "gvozdi4ek",
    "ts": "2026-08-30T11:50:01.724Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 2246,
+    "cur": "coin",
+    "win": false,
+    "seconds": 641
+   }
   }
  ]
 }
