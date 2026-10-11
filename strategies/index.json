@@ -109,7 +109,13 @@
    "author": "absolutsall",
    "ts": "2026-10-08T11:25:27.520Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 4912,
+    "cur": "coin",
+    "win": false,
+    "seconds": 395
+   }
   },
   {
    "file": "farm-falen-mu60mga4.json",
