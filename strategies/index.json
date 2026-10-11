@@ -134,7 +134,13 @@
     "0440d6c799",
     "3a869591c5",
     "116954e397"
-   ]
+   ],
+   "earn": {
+    "rate": 4067,
+    "cur": "coin",
+    "win": false,
+    "seconds": 547
+   }
   },
   {
    "file": "farm-6kch-mtfqz6d8.json",
