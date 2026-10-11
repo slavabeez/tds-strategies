@@ -109,7 +109,13 @@
    "author": "absolutsall",
    "ts": "2026-10-08T12:38:14.189Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 3716,
+    "cur": "coin",
+    "win": true,
+    "seconds": 436
+   }
   },
   {
    "file": "frost-solo-muzg9sv2.json",
