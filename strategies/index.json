@@ -18,7 +18,13 @@
    "author": "absolutsall",
    "ts": "2026-10-11T08:29:53.919Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 3743,
+    "cur": "coin",
+    "win": false,
+    "seconds": 453
+   }
   },
   {
    "file": "frost-12m-37s-mv1w7o4w.json",
