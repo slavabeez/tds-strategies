@@ -44,7 +44,13 @@
    "author": "absolutsall",
    "ts": "2026-10-10T04:27:14.288Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 4607,
+    "cur": "coin",
+    "win": false,
+    "seconds": 386
+   }
   },
   {
    "file": "operator-xp-farm-mv1sfzol.json",
