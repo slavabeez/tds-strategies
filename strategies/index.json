@@ -1,32 +1,6 @@
 {
  "items": [
   {
-   "file": "frost-easy-mv3kbl32.json",
-   "name": "frost easy",
-   "hash": "dfab77fc836e5b18",
-   "map": "Simplicity",
-   "difficulty": "Fallen",
-   "mode": "survival",
-   "towers": [
-    "Scout",
-    "Hacker",
-    "DJ Booth",
-    "Engineer",
-    "EvolvedJuggernaut"
-   ],
-   "actions": 276,
-   "author": "absolutsall",
-   "ts": "2026-10-11T08:29:53.919Z",
-   "stars": 0,
-   "raters": [],
-   "earn": {
-    "rate": 3743,
-    "cur": "coin",
-    "win": false,
-    "seconds": 453
-   }
-  },
-  {
    "file": "frost-12m-37s-mv1w7o4w.json",
    "name": "frost 12m 37s",
    "hash": "55ac4c48de441f99",
