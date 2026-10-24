@@ -1,6 +1,23 @@
 {
  "items": [
   {
+   "file": "farm-c-mvm7i9xw.json",
+   "name": "farm c",
+   "hash": "4a0dcdf972dd697e",
+   "map": "",
+   "difficulty": "Act1Easy",
+   "mode": "halloween2026",
+   "towers": [
+    "Snowballer",
+    "Accelerator"
+   ],
+   "actions": 91,
+   "author": "RONEXZXCXZ",
+   "ts": "2026-10-24T09:38:48.404Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "frost-12m-37s-mv1w7o4w.json",
    "name": "frost 12m 37s",
    "hash": "55ac4c48de441f99",
