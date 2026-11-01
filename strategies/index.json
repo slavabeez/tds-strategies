@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "file": "krutoy-farm-gems-mvy1phfm.json",
+   "name": "крутой фарм гемс",
+   "hash": "60604ac35698a34b",
+   "map": "Wretched Front",
+   "difficulty": "Easy",
+   "mode": "hardcore",
+   "towers": [
+    "Farm",
+    "Boomerang",
+    "Freezer",
+    "Scout",
+    "Crook Boss"
+   ],
+   "actions": 113,
+   "author": "absolutsall",
+   "ts": "2026-11-01T16:29:41.122Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "horoshiy-farm-gemov-opyt-na-skauta-mvy0oq19.json",
    "name": "хороший фарм гемов + опыт на скаута",
    "hash": "6308801a236c3839",
