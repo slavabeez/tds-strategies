@@ -38,7 +38,13 @@
    "author": "absolutsall",
    "ts": "2026-11-01T16:01:05.997Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 996,
+    "cur": "gem",
+    "win": false,
+    "seconds": 495
+   }
   },
   {
    "file": "farm-gemy-luchshiy-mvxwehe0.json",
