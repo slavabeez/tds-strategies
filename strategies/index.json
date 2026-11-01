@@ -70,7 +70,13 @@
    "author": "absolutsall",
    "ts": "2026-11-01T14:01:09.768Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 1103,
+    "cur": "gem",
+    "win": false,
+    "seconds": 434
+   }
   },
   {
    "file": "137gems-solo-5m-14s-mvxvsgey.json",
