@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "file": "137gems-solo-5m-14s-mvxvsgey.json",
+   "name": "137gems solo 5m 14s",
+   "hash": "33851c6a234679ae",
+   "map": "Wretched Front",
+   "difficulty": "Easy",
+   "mode": "hardcore",
+   "towers": [
+    "Farm",
+    "Boomerang",
+    "Freezer",
+    "Crook Boss",
+    "Minigunner"
+   ],
+   "actions": 187,
+   "author": "absolutsall",
+   "ts": "2026-11-01T13:44:02.074Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "farm-c-mvm7i9xw.json",
    "name": "farm c",
    "hash": "4a0dcdf972dd697e",
