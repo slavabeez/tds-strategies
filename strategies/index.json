@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "file": "horoshiy-farm-gemov-opyt-na-skauta-mvy0oq19.json",
+   "name": "хороший фарм гемов + опыт на скаута",
+   "hash": "6308801a236c3839",
+   "map": "Wretched Front",
+   "difficulty": "Easy",
+   "mode": "hardcore",
+   "towers": [
+    "Farm",
+    "Boomerang",
+    "Freezer",
+    "Crook Boss",
+    "Scout"
+   ],
+   "actions": 123,
+   "author": "absolutsall",
+   "ts": "2026-11-01T16:01:05.997Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "farm-gemy-luchshiy-mvxwehe0.json",
    "name": "фарм гемы лучший",
    "hash": "88f9e228a02e12e6",
