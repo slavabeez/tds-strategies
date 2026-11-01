@@ -96,7 +96,13 @@
    "author": "absolutsall",
    "ts": "2026-11-01T13:44:02.074Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 1078,
+    "cur": "gem",
+    "win": false,
+    "seconds": 424
+   }
   },
   {
    "file": "farm-c-mvm7i9xw.json",
