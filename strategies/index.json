@@ -18,7 +18,13 @@
    "author": "absolutsall",
    "ts": "2026-11-01T16:29:41.122Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 1071,
+    "cur": "gem",
+    "win": false,
+    "seconds": 447
+   }
   },
   {
    "file": "horoshiy-farm-gemov-opyt-na-skauta-mvy0oq19.json",
