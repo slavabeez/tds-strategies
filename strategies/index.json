@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "file": "farm-gems-shotganer-exp-mvzfpg2m.json",
+   "name": "фарм гемс + шотганер exp",
+   "hash": "a46934fc61fc8bfc",
+   "map": "Wretched Front",
+   "difficulty": "Easy",
+   "mode": "hardcore",
+   "towers": [
+    "Farm",
+    "Boomerang",
+    "Freezer",
+    "Crook Boss",
+    "Shotgunner"
+   ],
+   "actions": 98,
+   "author": "absolutsall",
+   "ts": "2026-11-02T15:49:20.158Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "krutoy-farm-gems-mvy1phfm.json",
    "name": "крутой фарм гемс",
    "hash": "60604ac35698a34b",
