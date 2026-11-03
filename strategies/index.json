@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "file": "farmm-mw09a2jr.json",
+   "name": "фармм !!",
+   "hash": "88d53842a6b53156",
+   "map": "Wretched Front",
+   "difficulty": "Easy",
+   "mode": "hardcore",
+   "towers": [
+    "Farm",
+    "Boomerang",
+    "Crook Boss",
+    "Freezer",
+    "Scout"
+   ],
+   "actions": 85,
+   "author": "absolutsall",
+   "ts": "2026-11-03T05:37:11.271Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "skaut-farm-gemy-mw08uw5f.json",
    "name": "скаут фарм + гемы",
    "hash": "b62ff582ea436b77",
