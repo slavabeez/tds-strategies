@@ -365,10 +365,10 @@
     "36b01f0552"
    ],
    "earn": {
-    "rate": 2246,
+    "rate": 3746,
     "cur": "coin",
-    "win": false,
-    "seconds": 641
+    "win": true,
+    "seconds": 713
    }
   }
  ]
