@@ -77,8 +77,10 @@
    "actions": 113,
    "author": "absolutsall",
    "ts": "2026-11-01T16:29:41.122Z",
-   "stars": 0,
-   "raters": [],
+   "stars": 1,
+   "raters": [
+    "9d2bdf75b3"
+   ],
    "earn": {
     "rate": 1071,
     "cur": "gem",
