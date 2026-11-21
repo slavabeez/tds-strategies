@@ -1,6 +1,25 @@
 {
  "items": [
   {
+   "file": "solo-80-gemov-mwqhzm54.json",
+   "name": "соло 80 гемов",
+   "hash": "9ea25db0d289e284",
+   "map": "Outskirts Commune",
+   "difficulty": "Easy",
+   "mode": "hardcore",
+   "towers": [
+    "Electroshocker",
+    "Sniper",
+    "Scout",
+    "Minigunner"
+   ],
+   "actions": 40,
+   "author": "bay 5.1",
+   "ts": "2026-11-21T14:23:00.568Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "farmm-mw09a2jr.json",
    "name": "фармм !!",
    "hash": "88d53842a6b53156",
