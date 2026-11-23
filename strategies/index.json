@@ -1,6 +1,24 @@
 {
  "items": [
   {
+   "file": "frozen-solo-mwtdvoda.json",
+   "name": "Frozen solo",
+   "hash": "cfe08ca545e594da",
+   "map": "Simplicity",
+   "difficulty": "Frost",
+   "mode": "survival",
+   "towers": [
+    "Brawler",
+    "Freezer",
+    "Shotgunner"
+   ],
+   "actions": 102,
+   "author": "bay 7.1",
+   "ts": "2026-11-23T14:51:16.894Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "farmtest-mwtd0yfs.json",
    "name": "FARM_TEST",
    "hash": "62522ca90b528abe",
