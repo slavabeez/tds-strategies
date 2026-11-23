@@ -219,8 +219,10 @@
    "actions": 247,
    "author": "absolutsall",
    "ts": "2026-10-10T04:27:14.288Z",
-   "stars": 0,
-   "raters": [],
+   "stars": 1,
+   "raters": [
+    "9d2bdf75b3"
+   ],
    "earn": {
     "rate": 4607,
     "cur": "coin",
