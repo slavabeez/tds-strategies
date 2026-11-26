@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "file": "molten-solo-jug-x-king-farm-mwxs7ns9.json",
+   "name": "Molten solo  jug x king farm",
+   "hash": "7891fd289fd6534d",
+   "map": "Simplicity",
+   "difficulty": "Molten",
+   "mode": "survival",
+   "towers": [
+    "Scout",
+    "Farm",
+    "EvolvedKingpin",
+    "EvolvedJuggernaut",
+    "Commander"
+   ],
+   "actions": 258,
+   "author": "andftewREAL",
+   "ts": "2026-11-26T16:43:35.337Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "frozen-solo-mwtdvoda.json",
    "name": "Frozen solo",
    "hash": "cfe08ca545e594da",
