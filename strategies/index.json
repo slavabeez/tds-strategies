@@ -1,6 +1,24 @@
 {
  "items": [
   {
+   "file": "gpyro-mecha-base-xp-farm-hc-mx03lfir.json",
+   "name": "Gpyro Mecha Base xp farm HC",
+   "hash": "428a6861d4991933",
+   "map": "",
+   "difficulty": "Easy",
+   "mode": "hardcore",
+   "towers": [
+    "Pyromancer",
+    "Shotgunner",
+    "EvolvedMechaBase"
+   ],
+   "actions": 15,
+   "author": "absolutsall",
+   "ts": "2026-11-28T07:37:45.939Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "hc-gpyro-farm-military-mwzxeh2o.json",
    "name": "hc Gpyro farm military",
    "hash": "23ae209674ac4fd4",
