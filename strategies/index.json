@@ -16,7 +16,13 @@
    "author": "absolutsall",
    "ts": "2026-11-28T04:44:23.664Z",
    "stars": 0,
-   "raters": []
+   "raters": [],
+   "earn": {
+    "rate": 508,
+    "cur": "gem",
+    "win": false,
+    "seconds": 156
+   }
   },
   {
    "file": "molten-solo-jug-x-king-farm-mwxs7ns9.json",
