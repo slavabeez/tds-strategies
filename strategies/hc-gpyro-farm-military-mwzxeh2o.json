@@ -1,0 +1,237 @@
+{
+ "map": "",
+ "towers": [
+  "Pyromancer",
+  "Shotgunner",
+  "Military Base"
+ ],
+ "difficulty": "Easy",
+ "currency": "gems",
+ "version": 1,
+ "createdAt": 1795841060,
+ "request": {
+  "difficulty": "Easy",
+  "mode": "hardcore",
+  "count": 1
+ },
+ "mode": "hardcore",
+ "actions": [
+  {
+   "cost": 850,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Pyromancer",
+   "y": 0.9529039263725281,
+   "wave": 0,
+   "prep": true,
+   "z": -31.544355392456055,
+   "t": "place",
+   "x": -5.854728698730469,
+   "dt": 0,
+   "cash": 1250
+  },
+  {
+   "idx": 1,
+   "wave": 1,
+   "cost": 325,
+   "t": "upgrade",
+   "cash": 400,
+   "dt": 1
+  },
+  {
+   "idx": 1,
+   "wave": 2,
+   "cost": 900,
+   "t": "upgrade",
+   "cash": 1066,
+   "dt": 3.6
+  },
+  {
+   "idx": 1,
+   "wave": 6,
+   "cost": 2777,
+   "t": "upgrade",
+   "cash": 2978,
+   "dt": 3.8
+  },
+  {
+   "cost": 703,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Shotgunner",
+   "y": 0.9639861583709717,
+   "wave": 8,
+   "z": -28.042688369750977,
+   "t": "place",
+   "x": -10.813721656799316,
+   "dt": 3.8,
+   "cash": 1522
+  },
+  {
+   "idx": 2,
+   "wave": 9,
+   "cost": 750,
+   "t": "upgrade",
+   "cash": 949,
+   "dt": 0.5
+  },
+  {
+   "idx": 2,
+   "wave": 10,
+   "cost": 1500,
+   "t": "upgrade",
+   "cash": 2431,
+   "dt": 3.3
+  },
+  {
+   "cost": 2132,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Shotgunner",
+   "y": 0.985695481300354,
+   "wave": 11,
+   "z": -30.044979095458984,
+   "t": "place",
+   "x": -10.905400276184082,
+   "dt": 4,
+   "cash": 2241
+  },
+  {
+   "idx": 3,
+   "wave": 11,
+   "cost": 750,
+   "t": "upgrade",
+   "cash": 829,
+   "dt": 4.9
+  },
+  {
+   "idx": 3,
+   "wave": 13,
+   "cost": 1500,
+   "t": "upgrade",
+   "cash": 2519,
+   "dt": 3.6
+  },
+  {
+   "cost": 1043,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Shotgunner",
+   "y": 0.9653780460357666,
+   "wave": 14,
+   "z": -30.68618392944336,
+   "t": "place",
+   "x": -8.274042129516602,
+   "dt": 3.9,
+   "cash": 1430
+  },
+  {
+   "idx": 4,
+   "wave": 14,
+   "cost": 750,
+   "t": "upgrade",
+   "cash": 1117,
+   "dt": 5.4
+  },
+  {
+   "idx": 4,
+   "wave": 15,
+   "cost": 1500,
+   "t": "upgrade",
+   "cash": 1865,
+   "dt": 5
+  },
+  {
+   "cost": 1336,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Military Base",
+   "y": 1.1971853971481323,
+   "wave": 17,
+   "z": -31.62421989440918,
+   "t": "place",
+   "x": 7.111659049987793,
+   "dt": 6.1,
+   "cash": 2784
+  },
+  {
+   "idx": 5,
+   "wave": 19,
+   "cost": 750,
+   "t": "upgrade",
+   "cash": 5580,
+   "dt": 11.7
+  },
+  {
+   "idx": 5,
+   "wave": 19,
+   "cost": 1100,
+   "t": "upgrade",
+   "cash": 5014,
+   "dt": 12
+  }
+ ],
+ "name": "hc Gpyro farm military",
+ "author": "absolutsall",
+ "uploadedAt": "2026-11-28T04:44:23.664Z"
+}
