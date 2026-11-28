@@ -1,6 +1,24 @@
 {
  "items": [
   {
+   "file": "hc-gpyro-farm-military-mwzxeh2o.json",
+   "name": "hc Gpyro farm military",
+   "hash": "23ae209674ac4fd4",
+   "map": "",
+   "difficulty": "Easy",
+   "mode": "hardcore",
+   "towers": [
+    "Pyromancer",
+    "Shotgunner",
+    "Military Base"
+   ],
+   "actions": 16,
+   "author": "absolutsall",
+   "ts": "2026-11-28T04:44:23.664Z",
+   "stars": 0,
+   "raters": []
+  },
+  {
    "file": "molten-solo-jug-x-king-farm-mwxs7ns9.json",
    "name": "Molten solo  jug x king farm",
    "hash": "7891fd289fd6534d",
