@@ -1,0 +1,227 @@
+{
+ "map": "",
+ "towers": [
+  "Pyromancer",
+  "Shotgunner",
+  "EvolvedMechaBase"
+ ],
+ "difficulty": "Easy",
+ "currency": "gems",
+ "version": 1,
+ "createdAt": 1795851463,
+ "request": {
+  "difficulty": "Easy",
+  "mode": "hardcore",
+  "count": 1
+ },
+ "mode": "hardcore",
+ "actions": [
+  {
+   "cost": 1175,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Pyromancer",
+   "y": 0.9710663557052612,
+   "wave": 0,
+   "prep": true,
+   "z": -32.993289947509766,
+   "t": "place",
+   "x": -5.308048725128174,
+   "dt": 0,
+   "cash": 1250
+  },
+  {
+   "idx": 1,
+   "wave": 0,
+   "prep": true,
+   "cost": 325,
+   "t": "upgrade",
+   "cash": 400,
+   "dt": 0
+  },
+  {
+   "idx": 1,
+   "wave": 2,
+   "cost": 900,
+   "t": "upgrade",
+   "cash": 1066,
+   "dt": 3.4
+  },
+  {
+   "idx": 1,
+   "wave": 6,
+   "cost": 2777,
+   "t": "upgrade",
+   "cash": 2983,
+   "dt": 3.4
+  },
+  {
+   "cost": 780,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Shotgunner",
+   "y": 0.9599673748016357,
+   "wave": 8,
+   "z": -31.286865234375,
+   "t": "place",
+   "x": -7.213980674743652,
+   "dt": 3.8,
+   "cash": 1532
+  },
+  {
+   "idx": 2,
+   "wave": 8,
+   "cost": 750,
+   "t": "upgrade",
+   "cash": 947,
+   "dt": 5.7
+  },
+  {
+   "idx": 2,
+   "wave": 10,
+   "cost": 1500,
+   "t": "upgrade",
+   "cash": 1563,
+   "dt": 3
+  },
+  {
+   "cost": 2069,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Shotgunner",
+   "y": 0.9450086355209351,
+   "wave": 12,
+   "z": -30.381145477294922,
+   "t": "place",
+   "x": -5.364108562469482,
+   "dt": 1.8,
+   "cash": 2436
+  },
+  {
+   "idx": 3,
+   "wave": 12,
+   "cost": 750,
+   "t": "upgrade",
+   "cash": 966,
+   "dt": 2.8
+  },
+  {
+   "idx": 3,
+   "wave": 13,
+   "cost": 1500,
+   "t": "upgrade",
+   "cash": 2654,
+   "dt": 4.1
+  },
+  {
+   "idx": 1,
+   "wave": 19,
+   "t": "sell",
+   "cash": 9595,
+   "dt": 0.9
+  },
+  {
+   "cost": 11994,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "EvolvedMechaBase",
+   "y": 1.1373835802078247,
+   "wave": 19,
+   "z": -28.341299057006836,
+   "t": "place",
+   "x": 8.556744575500488,
+   "dt": 2.5,
+   "cash": 12787
+  },
+  {
+   "idx": 3,
+   "wave": 19,
+   "t": "sell",
+   "cash": 986,
+   "dt": 6.4
+  },
+  {
+   "idx": 2,
+   "wave": 19,
+   "t": "sell",
+   "cash": 3361,
+   "dt": 7.3
+  },
+  {
+   "cost": 98,
+   "rot": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "tower": "Shotgunner",
+   "y": 0.8542978763580322,
+   "wave": 19,
+   "z": -24.927724838256836,
+   "t": "place",
+   "x": -1.0127830505371094,
+   "dt": 15,
+   "cash": 5736
+  }
+ ],
+ "name": "Gpyro Mecha Base xp farm HC",
+ "author": "absolutsall",
+ "uploadedAt": "2026-11-28T07:37:45.939Z"
+}
